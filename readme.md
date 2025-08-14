@@ -69,7 +69,7 @@ iterations, and finally, the point clouds after convergence at 26 iterations.
 
 ![iteration 5 3D](P2P_ICP_3D/ICP_iteration_5.png)
 
-![iteration 25 3D](P2P_ICP_3D/ICP_iteration_26.png)
+![iteration 26 3D](P2P_ICP_3D/ICP_iteration_26.png)
 
 ## k-Dimensional Tree
 
