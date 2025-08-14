@@ -63,13 +63,13 @@ noise to simulate a real time scan from a time-of-flight sensor.
 ![point clouds 3D](P2P_ICP_3D/point_clouds.png)
 
 Below, you can see the input to the ICP algorithm, and the status after 5 
-iterations, and finally, the point clouds after convergence at 25 iterations.
+iterations, and finally, the point clouds after convergence at 26 iterations.
 
 ![iteration 0 3D](P2P_ICP_3D/ICP_iteration_0.png)
 
 ![iteration 5 3D](P2P_ICP_3D/ICP_iteration_5.png)
 
-![iteration 25 3D](P2P_ICP_3D/ICP_iteration_25.png)
+![iteration 25 3D](P2P_ICP_3D/ICP_iteration_26.png)
 
 ## k-Dimensional Tree
 

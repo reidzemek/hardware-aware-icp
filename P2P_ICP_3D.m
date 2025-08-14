@@ -350,9 +350,11 @@ while (prev_transformation_error - transformation_error > eps) && (iteration - 1
     N(1, 1) = trace(H);
     N(1, 2:4) = delta';
     N(2:4, 1) = delta;
-    N(2:4, 2:4) = H + H' - trace(H) * eye(3);
+    N(2:4, 2:4) = [2*H(1, 1)-trace(H), H(1, 2)+H(2, 1),    H(1, 3)+H(3, 1); ...
+                   H(2, 1)+H(1, 2),    2*H(2, 2)-trace(H), H(2, 3)+H(3, 2); ...
+                   H(3, 1)+H(1, 3),    H(3, 2)+H(2, 3),    2*H(3, 3)-trace(H)];
     
-    % Use the power iteration method to compute the dominant eigen vector
+    % Use the power iteration method to compute the dominant eigen vector, corresponding to the unit quaternion
     q = [1; 0; 0; 0];
     K = 100;
     for k = 1:K
@@ -364,7 +366,7 @@ while (prev_transformation_error - transformation_error > eps) && (iteration - 1
         q = q_temp;
     end
     
-    % Quarternion to rotation matrix conversion
+    % Quaternion to rotation matrix conversion
     R = [1 - 2*(q(3)^2 + q(4)^2),   2*(q(2)*q(3) - q(4)*q(1)), 2*(q(2)*q(4) + q(3)*q(1)); ...
          2*(q(2)*q(3) + q(4)*q(1)), 1 - 2*(q(2)^2 + q(4)^2),   2*(q(3)*q(4) - q(2)*q(1)); ...
          2*(q(2)*q(4) - q(3)*q(1)), 2*(q(3)*q(4) + q(2)*q(1)), 1 - 2*(q(2)^2 + q(3)^2)];
