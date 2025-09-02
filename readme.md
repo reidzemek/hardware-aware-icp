@@ -24,29 +24,34 @@ First we will start with a 2-dimensional point cloud, generated as a sum of
 randomized decaying harmonics producing a natural looking irregular waveform 
 shown below.
 
-![squiggly function](P2P_ICP_2D/squiggly_function.png)
+![squiggly function LIGHT](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_LIGHT/squiggly_function.png#gh-light-mode-only)
+![squiggly function DARK](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_DARK/squiggly_function.png#gh-dark-mode-only)
 
 Next, we generate a random transformation and apply it to the point cloud, 
 adding gaussian noise to simulate a real time scan from a time-of-flight sensor.
 
-![point clouds 2D](P2P_ICP_2D/point_clouds.png)
+![point clouds 2D LIGHT](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_LIGHT/point_clouds.png#gh-light-mode-only)
+![point clouds 2D DARK](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_DARK/point_clouds.png#gh-dark-mode-only)
 
 Now we can begin the ICP algorithm with the input to the first iteration 
 shown below.
 
-![iteration 0 2D](P2P_ICP_2D/ICP_iteration_0.png)
+![iteration 0 2D LIGHT](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_LIGHT/ICP_iteration_0.png#gh-light-mode-only)
+![iteration 0 2D DARK](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_DARK/ICP_iteration_0.png#gh-dark-mode-only)
 
-After 5 iterations, we have the following.
+After 3 iterations, we have the following.
 
-![iteration 5 2D](P2P_ICP_2D/ICP_iteration_5.png)
+![iteration 3 2D LIGHT](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_LIGHT/ICP_iteration_3.png#gh-light-mode-only)
+![iteration 3 2D DARK](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_DARK/ICP_iteration_3.png#gh-dark-mode-only)
 
-With convergence after 32 iterations as shown.
+With convergence after 12 iterations as shown.
 
-![iteration 32 2D](P2P_ICP_2D/ICP_iteration_32.png)
+![iteration 12 2D LIGHT](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_LIGHT/ICP_iteration_12.png#gh-light-mode-only)
+![iteration 12 2D DARK](/P2P_ICP_2D_Example/P2P_ICP_2D_Figures_DARK/ICP_iteration_12.png#gh-dark-mode-only)
 
 It should be noted that convergence to the global minimum is not 
-guaranteed, with longer waveforms increasing the likelihood of getting 
-trapped in local minima.
+guaranteed, with longer waveforms and larger initial transformations increasing 
+the likelihood of getting trapped in local minimum.
 
 ## Point-to-point ICP - 3D
 
@@ -54,22 +59,31 @@ First, we begin with a 3-dimensional point cloud; a stochastically generated
 2D surface. This surface is constructed as the outer product of two 
 horizontal signals, each formed by a randomized, decaying harmonic series.
 
-![squiggly surface](P2P_ICP_3D/squiggly_surface.png)
+![squiggly surface LIGHT](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_LIGHT/squiggly_surface.png#gh-light-mode-only)
+![squiggly surface DARK](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_DARK/squiggly_surface.png#gh-dark-mode-only)
 
 As we did in the 2-dimensional case, we can now generate a random 
 transformation and apply it to the point cloud, once again, adding gaussian 
 noise to simulate a real time scan from a time-of-flight sensor.
 
-![point clouds 3D](P2P_ICP_3D/point_clouds.png)
+![point clouds 3D LIGHT](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_LIGHT/point_clouds.png#gh-light-mode-only)
+![point clouds 3D DARK](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_DARK/point_clouds.png#gh-dark-mode-only)
 
-Below, you can see the input to the ICP algorithm, and the status after 5 
-iterations, and finally, the point clouds after convergence at 26 iterations.
+Below, you can see the input to the ICP algorithm, and the status after 10 
+iterations, 20 iterations, and finally, the point clouds after convergence at 
+30 iterations.
 
-![iteration 0 3D](P2P_ICP_3D/ICP_iteration_0.png)
+![iteration 0 3D LIGHT](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_LIGHT/ICP_iteration_0.png#gh-light-mode-only)
+![iteration 0 3D DARK](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_DARK/ICP_iteration_0.png#gh-dark-mode-only)
 
-![iteration 5 3D](P2P_ICP_3D/ICP_iteration_5.png)
+![iteration 5 3D LIGHT](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_LIGHT/ICP_iteration_5.png#gh-light-mode-only)
+![iteration 5 3D DARK](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_DARK/ICP_iteration_5.png#gh-dark-mode-only)
 
-![iteration 26 3D](P2P_ICP_3D/ICP_iteration_26.png)
+![iteration 10 3D LIGHT](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_LIGHT/ICP_iteration_10.png#gh-light-mode-only)
+![iteration 10 3D DARK](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_DARK/ICP_iteration_10.png#gh-dark-mode-only)
+
+![iteration 20 3D LIGHT](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_LIGHT/ICP_iteration_20.png#gh-light-mode-only)
+![iteration 20 3D DARK](/P2P_ICP_3D_Example/P2P_ICP_3D_Figures_DARK/ICP_iteration_20.png#gh-dark-mode-only)
 
 ## k-Dimensional Tree
 
@@ -85,7 +99,9 @@ The first step in constructing a k-D tree is to iteratively split the point
 cloud at the median point along alternating axes, continuing until only leaf 
 nodes remain.
 
-![k-D Tree Visualization](k-D_Tree_Example/k-D_Tree_Visualization.png)
+![k-D Tree Visualization LIGHT](k-D_Tree_Example/k-D_Tree_Figures_LIGHT/k-D_Tree_Visualization.png#gh-light-mode-only)
+![k-D Tree Visualization DARK](k-D_Tree_Example/k-D_Tree_Figures_DARK/k-D_Tree_Visualization.png#gh-dark-mode-only)
+
 
 To enable efficient traversal of the tree, for each node, we must store the 
 following.
@@ -97,12 +113,14 @@ following.
 
 Having done this, we can draw the tree as shown.
 
-![k-D Tree Structure](k-D_Tree_Example/k-D_Tree_Structure.png)
+![k-D Tree Structure LIGHT](k-D_Tree_Example/k-D_Tree_Figures_LIGHT/k-D_Tree_Structure.png#gh-light-mode-only)
+![k-D Tree Structure DARK](k-D_Tree_Example/k-D_Tree_Figures_DARK/k-D_Tree_Structure.png#gh-dark-mode-only)
 
 Consider a query point (shown in red) for which we want to find the nearest point 
 using the tree constructed above.
 
-![k-D Tree Visualization (New Point)](k-D_Tree_Example/k-D_Tree_Visualization_NPT.png)
+![k-D Tree Visualization (New Point) LIGHT](k-D_Tree_Example/k-D_Tree_Figures_LIGHT/k-D_Tree_Visualization_NPT.png#gh-light-mode-only)
+![k-D Tree Visualization (New Point) DARK](k-D_Tree_Example/k-D_Tree_Figures_DARK/k-D_Tree_Visualization_NPT.png#gh-dark-mode-only)
 
 The process of identifying the nearest point always begins at the root of the 
 k-D tree which is then recursively traversed down to a leaf node by comparing 
